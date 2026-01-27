@@ -1,0 +1,514 @@
+<div class="container-fluid-p-0">
+  <div class="page-container">
+    <div class="container">
+      <!-- Login Forms -->
+
+      <div class="login-wrapper">
+        <div class="row align-items-center justify-content-center">
+          <!-- <div class="col-md-12 col-lg-5 col-xl-5 col-12">
+  <div class="login-left">
+    <img src="./images/form-image.png" class="img-fluid" alt="" />
+  </div>
+</div> -->
+
+
+          <div class="col-md-12 col-lg-5 col-xl-5 col-12">
+            <div class="form-box">
+              <div class="login-tabs">
+              
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-newpatient-tab"
+                      data-toggle="pill"
+                      data-target="#pills-newpatient"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-newpatient"
+                      aria-selected="true"
+                    >
+                      Clinic Admin
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="pills-newclinic-tab"
+                      data-toggle="pill"
+                      data-target="#pills-newclinic"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-newclinic"
+                      aria-selected="false"
+                    >
+                      Therapist
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="login-content">
+                <div class="tab-content" id="pills-tabContent">
+                  <div
+                    class="tab-pane fade"
+                    id="pills-newpatient"
+                    role="tabpanel"
+                    aria-labelledby="pills-newpatient-tab"
+                  >
+                    <div class="form-group-container">
+                      <form
+                        role="form"
+                        name="form"
+                        (ngSubmit)="f.form.valid && onSubmit1()"
+                        class="form-signin"
+                        #f="ngForm"
+                      >
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="login-heading text-center">
+                              <h1>Clinic Login</h1>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  type="email"
+                                  name="username"
+                                  [(ngModel)]="form.username"
+                                  #username="ngModel"
+                                  autocomplete="off"
+                                  autofocus
+                                  required
+                                  placeholder="Registered email"
+                                  class="form-input icon-input"
+                                />
+                                <div class="input-icon">
+                                  <i class="far fa-user"></i>
+                                </div>
+                                <div *ngIf="f.submitted && username.invalid">
+                                  <div
+                                    class="text-danger small"
+                                    *ngIf="username.errors.required"
+                                  >
+                                    Email is required
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  [type]="changetype ? 'password' : 'text'"
+                                  name="password"
+                                  [(ngModel)]="form.password"
+                                  #password="ngModel"
+                                  required
+                                  minlength="6"
+                                  placeholder="Password"
+                                  class="form-input icon-input"
+                                  autocomplete="off"
+                                  autofocus
+                                  required
+                                />
+                                <div class="eye-icon" (click)="viewpass()">
+                                  <i
+                                    [ngClass]="
+                                      visible ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                    "
+                                  ></i>
+                                </div>
+                                <div class="input-icon">
+                                  <i class="fas fa-lock"></i>
+                                </div>
+                                <div *ngIf="f.submitted && password.invalid">
+                                  <div
+                                    class="text-danger small mb-2"
+                                    *ngIf="password.errors.required"
+                                  >
+                                    Password is required
+                                  </div>
+                                  <div
+                                    class="text-danger small mb-2"
+                                    *ngIf="password.errors.minlength"
+                                  >
+                                    Password must beat least 6 characters
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  placeholder="Enter captcha"
+                                  class="form-input icon-input"
+                                />
+                                <div class="input-icon">
+                                  <i class="fa-solid fa-arrows-rotate"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="">
+                                <textarea
+                                  name=""
+                                  id=""
+                                  cols="30"
+                                  class="form-textarea"
+                                  placeholder="5 x 8 P 0 Z"
+                                  disabled
+                                  rows="1"
+                                  style="font-size: 25px; text-align: center"
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div> -->
+
+                          <div class="col-md-12">
+                            <div class="password-bottom">
+                              <!-- <div class="remember-password">
+                                <input type="checkbox" />
+                                <span>Remember Me</span>
+                              </div> -->
+                              <div class="forgot-password">
+                                <a routerLink="/recovers"
+                                  >Forgot Password?</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12" *ngIf="isLoginFailed == true">
+                            <div class="remember-me">
+                              <span class="text-danger">{{
+                                this.notificationAlert
+                              }}</span>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-submit-btn">
+                              <a href=""
+                                ><button class="form-btn w-100">
+                                  Submit
+                                </button></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade show active"
+                    id="pills-newclinic"
+                    role="tabpanel"
+                    aria-labelledby="pills-newclicnic-tab"
+                  >
+                    <div class="form-group-container">
+                      <form
+                        role="therapistForm"
+                        name="therapistForm"
+                        (ngSubmit)="f1.form.valid && onSubmit2()"
+                        class="form-signin"
+                        #f1="ngForm"
+                      >
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="login-heading text-center">
+                              <h1>Therapist Login</h1>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  type="email"
+                                  name="username"
+                                  [(ngModel)]="therapistForm.tusername"
+                                  #tusername="ngModel"
+                                  placeholder="Registered email"
+                                  class="form-input icon-input"
+                                  autocomplete="off"
+                                  autofocus
+                                  required
+                                />
+                                <div class="input-icon">
+                                  <i class="far fa-user"></i>
+                                </div>
+                                <div *ngIf="f1.submitted && tusername.invalid">
+                                  <div
+                                    class="text-danger small"
+                                    *ngIf="tusername.errors.required"
+                                  >
+                                    Email is required
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  [type]="changetype ? 'password' : 'text'"
+                                  name="password"
+                                  [(ngModel)]="therapistForm.tpassword"
+                                  #tpassword="ngModel"
+                                  required
+                                  minlength="6"
+                                  placeholder="Password"
+                                  class="form-input icon-input"
+                                  autocomplete="off"
+                                  autofocus
+                                  required
+                                />
+                                <div class="eye-icon" (click)="viewpass()">
+                                  <i
+                                    [ngClass]="
+                                      visible ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                    "
+                                  ></i>
+                                </div>
+                                <div class="input-icon">
+                                  <i class="fas fa-lock"></i>
+                                </div>
+                                <div *ngIf="f1.submitted && tpassword.invalid">
+                                  <div
+                                    class="text-danger small mb-2"
+                                    *ngIf="tpassword.errors.required"
+                                  >
+                                    Password is required
+                                  </div>
+                                  <div
+                                    class="text-danger small mb-2"
+                                    *ngIf="tpassword.errors.minlength"
+                                  >
+                                    Password must beat least 6 characters
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  placeholder="Enter captcha"
+                                  class="form-input icon-input"
+                                />
+                                <div class="input-icon">
+                                  <i class="fa-solid fa-arrows-rotate"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <div class="">
+                                <textarea
+                                  name=""
+                                  id=""
+                                  cols="30"
+                                  class="form-textarea"
+                                  placeholder="5 x 8 P 0 Z"
+                                  disabled
+                                  rows="1"
+                                  style="font-size: 25px; text-align: center"
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div> -->
+
+                          <div class="col-md-12">
+                            <div class="password-bottom">
+                              <!-- <div class="remember-password">
+                                <input type="checkbox" />
+                                <span>Remember Me</span>
+                              </div> -->
+                              <div class="forgot-password">
+                                <a routerLink="/recovers"
+                                  >Forgot Password?</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12" *ngIf="isTLoginFailed == true">
+                            <div class="remember-me">
+                              <span class="text-danger">{{
+                                this.notificationAlert
+                              }}</span>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-submit-btn">
+                              <a 
+                                ><button class="form-btn w-100">
+                                  Submit
+                                </button></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="trial-lock-container" id="revokedPopupId">
+    <div class="trial-lock-card">
+      <br/> <br/> 
+      <div class="modal-content" style="width: 75%;" >
+        <div class="modal-header">
+          <h5 class="modal-title has-icon ms-icon-round text-center">
+            OTP & License Key Verification
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="bmi-calculator-container">
+            <div class="ms-panel-body p-0 clearfix">
+              <div class="tab-content">
+                <div
+                  role="tabpanel"
+                  class="tab-pane active show fade in"
+                  id="tab13">
+                  <div class="bmi-calculater-forms">
+                    <div class="row justify-content-center">
+                      <!-- OTP box start -->
+                      <div class="col-md-12 ">
+                        <div class="form-group-container otp-verification otp-inputs">
+                          <div class="row">
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit1"
+                                  (input)="focusOnNextInput('digit2', 'digit1')" (input)="moveToNext($event, 1)" (paste)="handlePaste($event, 1)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit2"
+                                  (input)="focusOnNextInput('digit3', 'digit2')"  (input)="moveToNext($event, 2)" (paste)="handlePaste($event, 2)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit3"
+                                  (input)="focusOnNextInput('digit4', 'digit3')" (input)="moveToNext($event, 3)" (paste)="handlePaste($event, 3)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit4"
+                                  (input)="focusOnNextInput('digit5', 'digit4')" (input)="moveToNext($event, 4)" (paste)="handlePaste($event, 4)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit5"
+                                  (input)="focusOnNextInput('digit6', 'digit5')" (input)="moveToNext($event, 5)" (paste)="handlePaste($event, 5)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                              <div class="form-input-group">
+                                <div class="form-input-box">
+                                  <input type="text" maxlength="1" placeholder="*" id="digit6"
+                                  (input)="focusOnNextInput('digit1', 'digit6')" (input)="moveToNext($event, 6)" (paste)="handlePaste($event, 6)"
+                                    class="form-input" />
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngIf="therapistError?.randomOtp">
+                              <span class="text-danger"
+                                >{{ therapistError.randomOtp }}
+                              </span>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="password-bottom">
+                                <p>
+                                  We emailed you a six-digit one-time password (OTP) to the inbox 
+                                  specified by your username.
+                                 <br/>
+                                  Enter the code in the field above to confirm your email address.
+                                 <br/><br/>
+                                  Please CHECK YOUR SPAM if it doesn’t show in your main inbox.
+                                 <br/><br/>
+                                  If you didn’t receive a code, click here to
+                                 <a type="button" (click)="resend()"><u>RESEND OTP</u></a>
+                               </p>
+                              </div>
+
+                              <!-- <div class="password-bottom">
+                                <p>
+                                  If you didn't receive a code!!
+                                  <a type="button" (click)="resend()">RESEND</a>
+                                </p>
+                              </div> -->
+
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!--OTP Box end-->
+                      <!-- License Key box start -->
+                      <div class="col-12">
+                        <div class="license-box-container">
+                          <h6>Please enter the license key provided by the clinic admin to proceed further.</h6>
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                             <input type="text" placeholder="Enter License Key"  id="licenseKey"
+                             [(ngModel)]="therapist.licenseKey"
+                             name="licenseKey" class="form-input w-100">
+                            </div>
+                          </div>
+                          <div class="alert alert-danger mb-4" id="licenseKeyNotFound">
+                            <p class="text-small">License Key not found</p>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text-center">
+                              <button type="button" class="btn btn-secondary mr-3" (click)="backToHome()">Later</button>
+                              <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- License box end -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>

@@ -1,0 +1,404 @@
+<div class="container-fluid p-0">
+  <div class="pages-container">
+    <div class="container">
+      <div class="login-wrapper">
+        <div class="login-heading text-cente">
+          <h1>Pay with card</h1>
+          <!-- <div class="back-arrow">
+            <a routerLink="/otp"
+              ><i class="fas fa-long-arrow-alt-left"></i
+            ></a>
+          </div> -->
+        </div>
+        <div class="row ">
+          <div class="col-md-12 col-lg-7 col-xl-7 col-12">
+          
+            <div class="login-form reset-password-box">
+              <div class="form-group-container mt-0">
+                <div class="row">
+                  <div class="col-12">
+                   
+                  </div>
+                  <!-- <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label"> card information</label>
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          id="cardNumber"
+                          [(ngModel)]="subscriptionBean.cardNumber"
+                          name="cardNumber"
+                          placeholder="0000 0000 0000 0000"
+                          maxlength="16"
+                          minlength="16"
+                          (input)="cardNumberFormatting('cardNumber')"
+                          class="form-input icon-input"
+                          autocomplete="off"
+                        />
+                        <div *ngIf="signupError?.cardNumber">
+                          <span class="text-danger">{{
+                            signupError.cardNumber
+                          }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          placeholder="MM/YY"
+                          id="cardExpiry"
+                          [(ngModel)]="subscriptionBean.cardExpiry"
+                          name="cardExpiry"
+                          class="form-input icon-input"
+                          autocomplete="off"
+                          maxlength="4"
+                          minlength="4"
+                          (input)="cardExpireFormatting('cardExpiry')"
+                        />
+                        <div *ngIf="signupError?.cardExpiry">
+                          <span class="text-danger">{{
+                            signupError.cardExpiry
+                          }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="password"
+                          placeholder="CVV"
+                          id="cardCvv"
+                          [(ngModel)]="subscriptionBean.cardCvv"
+                          name="cardCvv"
+                          class="form-input icon-input"
+                          autocomplete="off"
+                          maxlength="3"
+                          minlength="3"
+                        />
+                        <div *ngIf="signupError?.cardCvv">
+                          <span class="text-danger">{{
+                            signupError.cardCvv
+                          }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          id="cardHolderName"
+                          [(ngModel)]="subscriptionBean.cardHolderName"
+                          name="cardHolderName"
+                          placeholder="Name on Card"
+                          class="form-input icon-input"
+                        />
+                        <div *ngIf="signupError?.cardHolderName">
+                          <span class="text-danger">{{
+                            signupError.cardHolderName
+                          }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label">EIN NO.</label>
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          class="form-input"
+                          value="{{ subscriptionBean.clinicEin }}"
+                          placeholder="EIN NO."
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label">
+                        contact information</label
+                      >
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          placeholder="Name"
+                          class="form-input icon-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          class="form-input icon-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="number"
+                          placeholder="Phone number"
+                          class="form-input icon-input"
+                        />
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label"> Billing Address</label>
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          placeholder="Street Address"
+                          value="{{ subscriptionBean.address }}"
+                          class="form-input"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          placeholder="City"
+                          value="{{ subscriptionBean.cityName }}"
+                          class="form-input"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          value="{{ subscriptionBean.stateBean?.stateName }}"
+                          placeholder="State"
+                          class="form-input"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                    <div class="form-input-group">
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          value="{{ subscriptionBean.zipCode }}"
+                          placeholder="ZIP Code"
+                          class="form-input"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="plan-container row">
+                      <div   class="col-md-12 col-lg-12" *ngFor="let planList of subscriptionPlanList" >
+                      <label for="plan_{{planList.id}}" class="plan-selection-box">
+                        <div class="plan-selection-left">
+                          <div class="plan-selection-checkbox">
+                            <div class="plan-selected-checkbox">
+                              <i class="fas fa-check-circle"></i>
+                            </div>
+                          </div>
+                          <div class="plan-license">
+                            <span
+                              >Up to
+                              {{ planList.noOfLicense }} License</span
+                            >
+                            <div class="plan-selection-feature">
+                              <a
+                                >Plan Feature ({{
+                                  planList.subscriptionPlanName
+                                }})
+                                <i class="fas fa-angle-down"></i>
+                              </a>
+                            </div>
+                            <p>
+                              {{
+                                planList.subscriptionAmount / 12
+                                  | currency
+                                    : "USD"
+                                    : "symbol"
+                                    : "1.1-2"
+                              }}/License/ Month after 2 week free trial
+                            </p>
+                          </div>
+                        </div>
+                        <div class="plan-selection-right">
+                          <span *ngIf="planList.id !=subscriptionBean.subscriptionPlanId" > 
+                            <input
+                            type="radio"
+                            id="plan_{{planList.id}}"
+                            name="fav"
+                            value="plan_a" (click)="changePlan(planList)" />
+                          </span>
+                          <span *ngIf="planList.id ==subscriptionBean.subscriptionPlanId" > 
+                            <h6>Selected</h6>
+                          </span>
+                          <h4>$ {{ planList.subscriptionAmount }}</h4>
+                          <p>
+                            Per Year <br />
+                            Per License
+                          </p>
+                        </div>
+                      </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          <div class="col-md-12 col-lg-5 col-xl-5 col-12">
+            <div class="invoice-card">
+              <h4 class="text-center mb-3">Edematrack Membership</h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item lh-sm">
+                  <div>
+                    <h6 class="my-0">{{ subscriptionBean.subscriptionPlanBean?.subscriptionPlanName }}</h6>
+                    <small class="text-muted">Up to {{ subscriptionBean.subscriptionPlanBean.noOfLicense }} License</small >
+                  </div>
+                  <span class="text-muted">${{
+                      subscriptionBean.subscriptionPlanBean.subscriptionAmount
+                    }}
+                    / license / Year</span
+                  >
+                </li>
+
+                <li class="list-group-item lh-sm">
+                  <div>
+                    <h6 class="my-0">Subscription Fee</h6>
+                    <small class="text-muted">Billed Yearly</small>
+                  </div>
+                  <span class="text-muted">{{
+                    subscriptionBean.subscriptionPlanBean.noOfLicense *
+                      subscriptionBean.subscriptionPlanBean.subscriptionAmount
+                      | currency : "USD" : "symbol" : "1.1-2"
+                  }}</span>
+                </li>
+
+              
+                <li class="list-group-item">
+                  <div class="input-group promo-box">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Coupon Code"
+                      id="couponCode"
+                      [(ngModel)]="subscriptionBean.couponCode"
+                      name="couponCode"
+                    />
+                    <button type="submit" class="btn btn-secondary" *ngIf="subscriptionBean.isCouponCodeApply == 0" (click)="applyCouponCode()">
+                      Apply
+                    </button>
+                    <button type="submit" class="btn btn-secondary" *ngIf="subscriptionBean.isCouponCodeApply == 1" (click)="removeCouponCode()">
+                      Remove
+                    </button>
+                  </div>
+                </li>
+
+                <li class="list-group-item bg-light">
+                  <div class="text-success">
+                    <h6 class="my-0">Coupon code</h6>
+                    <small>{{subscriptionBean.couponCode}}</small>
+                  </div>
+                  
+                  <ng-template [ngIf]="subscriptionBean.isCouponCodeApply == 0" [ngIfElse]="elseBlock">
+                     <span class="text-success"> $&nbsp;0</span> 
+                  </ng-template>
+                  <ng-template #elseBlock>
+                    <ng-template [ngIf]="subscriptionBean.couponBean.discountType == 37">
+                      <span class="text-success">{{subscriptionBean.couponBean.discountValue}} %</span> 
+                    </ng-template>
+                    <ng-template [ngIf]="subscriptionBean.couponBean.discountType == 38">
+                      <span class="text-success"> $&nbsp;{{subscriptionBean.couponBean.discountValue}}</span> 
+                    </ng-template>
+                  </ng-template>
+                  
+                        
+                </li>
+
+                <li class="list-group-item">
+                  <span>Total (USD)</span>
+                  <ng-template [ngIf]="subscriptionBean.isCouponCodeApply == 0" [ngIfElse]="elseBlock1">
+                    <strong>
+                      {{ (subscriptionBean.subscriptionPlanBean.noOfLicense *
+                        subscriptionBean.subscriptionPlanBean.subscriptionAmount)
+                        | currency : "USD" : "symbol" : "1.1-2"
+                      }}
+                    </strong>
+                 </ng-template>
+                 <ng-template #elseBlock1>
+                        <ng-template [ngIf]="subscriptionBean.couponBean.discountType == 37">
+                          <strong>
+                            {{ (subscriptionBean.subscriptionPlanBean.noOfLicense *
+                              subscriptionBean.subscriptionPlanBean.subscriptionAmount)*( 100 - subscriptionBean.couponBean.discountValue)/100
+                              | currency : "USD" : "symbol" : "1.1-2"
+                            }}
+                          </strong>
+                        </ng-template>
+
+                        <ng-template [ngIf]="subscriptionBean.couponBean.discountType == 38">
+                          <strong>
+                            {{ (subscriptionBean.subscriptionPlanBean.noOfLicense *
+                                subscriptionBean.subscriptionPlanBean.subscriptionAmount) - (subscriptionBean.couponBean.discountValue)
+                              | currency : "USD" : "symbol" : "1.1-2"
+                            }}
+                          </strong>
+                        </ng-template>
+                  </ng-template>
+                </li>
+              </ul>
+              <div class="col-12">
+                <div class="form-submit-btn mt-3">
+                  <a
+                    ><button
+                      class="form-btn w-100"
+                      type="submit"
+                      (click)="
+                        subscribeNow(subscriptionBean.subscriptionPlanId)
+                      "
+                    >
+                      Subscribe
+                    </button></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <hr class="mt-5" />
+      </div>
+    </div>
+  </div>
+</div>

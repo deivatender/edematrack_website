@@ -1,0 +1,177 @@
+<div class="container-fluid-p-0">
+  <div class="hero-section page-container">
+    <div class="container plan-section">
+      <!-- plan Forms -->
+      <div class="ms-content-wrapper">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="page-title">Subscription Plan</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="trial-plan-box">
+              <div class="t-left">
+                <h6>Free Trial</h6>
+              </div>
+              <div class="t-right">
+                <p>
+                  Try with 2 weeks trial version, payment will be processed
+                  after trial period ends.
+                </p>
+                <button class="btn btn-primary btn-sm" routerLink="/register">
+                  Start with trial
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="row justify-content-center"></div>
+            <div class="ms-pane clearfix">
+              <div class="tab-content">
+                <div
+                  role="tabpanel"
+                  class="tab-pane fade in active show"
+                  id="tab13"
+                >
+                  <div class="alert alert-primary">
+                    <b>NOTE</b> :- All the plans are billed annually.
+                  </div>
+                  <div class="plan-main">
+                    <div
+                      class="plan-box-container"
+                      *ngFor="let planList of subscriptionPlanList let i=index" >
+                      <div class="plan-box">
+                        <h6 class="plan-title">
+                          {{ planList.subscriptionPlanName }}
+                        </h6>
+                        <h1 class="plan-amount">
+                          ${{ planList.subscriptionAmount }}
+                          <span> / license / Year </span>
+                        </h1>
+                        <p class="month-plan">
+                          ({{
+                            planList.subscriptionAmount / 12
+                              | currency : "USD" : "symbol" : "1.1-2"
+                          }}
+                          / Per license per month)
+                        </p>
+                      </div>
+                      <div class="plan-box-btn">
+                        <a routerLink="/register"
+                          ><button class="btn btn-primary w-100">
+                            Subscribe
+                          </button></a
+                        >
+                      </div>
+                      <div class="license-box">
+                        <strong>Therapist</strong>
+                        <p> Up to {{ planList.noOfLicense }} <br />
+                          <span *ngIf="i==0">License</span>
+                          <span *ngIf="i>0">Licenses</span>
+                        </p>
+                      </div>
+                      <div class="plan-box-feature">
+                        <ul [innerHTML]="planList.subscriptionPlanDesc"></ul>
+                      </div>
+                      <div class="plan-discount" *ngIf="planList.discount > 0">
+                        <span>Discount {{ planList.discount }}%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="plan-container row"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8 offset-lg-2">
+              <div class="faq_card">
+                <div class="container">
+                  <h5 class="mb-3">FAQ</h5>
+                  <div id="accordion">
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseOne"
+                        >
+                          Can EdemaTrack auto-pay?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseOne"
+                        class="collapse show"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Yes, you can enable this within the check-out to
+                          ensure uninterrupted service
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseTwo"
+                        >
+                          What if I don’t have my credit card when I log in, can
+                          I save my info and come back?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseTwo"
+                        class="collapse show"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Yes, just make sure you save your log in credentials
+                          to return.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseThree"
+                        >
+                          What if I don’t have an EIN?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseThree"
+                        class="collapse show"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          An EIN is the federal tax ID# associated with a
+                          business license, please advise if your practice is in
+                          need of an up-to-date business license.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

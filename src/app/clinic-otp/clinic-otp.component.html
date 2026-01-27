@@ -1,0 +1,132 @@
+<div class="container-fluid-p-0">
+  <div class="pages-container">
+    <div class="container">
+      <!-- Login Forms -->
+      <div class="login-wrapper">
+        <div class="row align-items-center justify-content-center">
+          <!-- <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+            <div class="login-left reset-img">
+              <img src="./images/vvvv-01.png" class="img-fluid" alt="" />
+            </div>
+          </div> -->
+          <div class="col-md-12 col-lg-5 col-xl-5 col-12">
+            <div class="login-form reset-password-box">
+              <div class="form-group-container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-logo text-center">
+                      <img src="assets/images/logo.png" alt="" />
+                    </div>
+                    <div class="login-heading text-center">
+                      <h1>OTP Verification</h1>
+                      <!-- <div class="back-arrow">
+                        <a routerLink="/register"
+                          ><i class="fas fa-long-arrow-alt-left"></i
+                        ></a>
+                      </div> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-group-container otp-inputs">
+                      <div class="row">
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input type="text" maxlength="1" placeholder="*" id="digit1"
+                                (input)="focusOnNextInput('digit2', 'digit1')" (input)="moveToNext($event, 1)" (paste)="handlePaste($event, 1)" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input type="text" maxlength="1" placeholder="*" id="digit2"
+                                (input)="focusOnNextInput('digit3', 'digit2')" (input)="moveToNext($event, 2)" (paste)="handlePaste($event, 2)" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input type="text" maxlength="1" placeholder="*" id="digit3"
+                                (input)="focusOnNextInput('digit4', 'digit3')" (input)="moveToNext($event, 3)" (paste)="handlePaste($event, 3)" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input maxlength="1" type="text" id="digit4"
+                                (input)="focusOnNextInput('digit5', 'digit4')" (input)="moveToNext($event, 4)" (paste)="handlePaste($event, 4)" placeholder="*" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input type="text" maxlength="1" placeholder="*" id="digit5"
+                                (input)="focusOnNextInput('digit6', 'digit5')" (input)="moveToNext($event, 5)" (paste)="handlePaste($event, 5)" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 col-2">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input type="text" maxlength="1" id="digit6" placeholder="*"
+                                (input)="focusOnNextInput('digit1', 'digit6')" (input)="moveToNext($event, 6)" (paste)="handlePaste($event, 6)" class="form-input" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="password-bottom">
+                            <p>
+                               We emailed you a six-digit one-time password (OTP) to the inbox 
+                               specified by your username.
+                              <br/>
+                               Enter the code in the field above to confirm your email address.
+                              <br/><br/>
+                               Please CHECK YOUR SPAM if it doesn’t show in your main inbox.
+                              <br/><br/>
+                               If you didn’t receive a code, click here to
+                              <a type="button" (click)="resend()"><u>RESEND OTP</u></a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="col-12">
+                    <div class="form-submit-btn">
+                      <a routerLink="/clinic-otp"
+                        ><button class="form-btn_2 w-100">Resend</button></a
+                      >
+                    </div>
+                  </div> -->
+                  <div *ngIf="signupError?.randomOtp">
+                    <span class="text-danger">{{ signupError.randomOtp }}</span>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-submit-btn">
+                      <a><button class="form-btn w-100 mt-3" (click)="onSubmit()">
+                          Verify
+                        </button></a>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <div class="password-bottom mt-3">
+                      <p>
+                        If you didn't receive a code!!
+                        <a type="button" (click)="resend()">RESEND</a>
+                      </p>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

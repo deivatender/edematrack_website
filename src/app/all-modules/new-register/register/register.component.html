@@ -1,0 +1,694 @@
+<div class="container-fluid-p-0">
+  <div class="page-container pb-5">
+    <div class="container">
+      <!-- Login Forms -->
+      <div class="login-wrapper" id="form1">
+        <div class="row align-items-center justify-content-center">
+          <!-- <div class="col-md-12 col-lg-5 col-xl-5 col-12">
+            <div class="login-left">
+              <img src="./images/form-image.png" class="img-fluid" alt="" />
+            </div>
+          </div> -->
+          <div class="col-md-12 col-lg-7 col-xl-7 col-12">
+            <div class="form-box">
+              <div class="login-tabs">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-newpatient-tab"
+                      data-toggle="pill"
+                      data-target="#pills-newpatient"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-newpatient"
+                      aria-selected="true"
+                    >
+                      Clinic Admin
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active" 
+                      id="pills-newclinic-tab"
+                      data-toggle="pill"
+                      data-target="#pills-newclinic"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-newclinic"
+                      aria-selected="false"
+                    >
+                      Therapist
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="login-content">
+                <div class="tab-content" id="pills-tabContent">
+                  <div
+                    class="tab-pane fade"
+                    id="pills-newpatient"
+                    role="tabpanel"
+                    aria-labelledby="pills-newpatient-tab"
+                  >
+                    <form action="">
+                      <div class="form-group-container">
+                        <div class="alert-error" id="clinic_mandat">
+                          <p><i class="fas fa-exclamation-circle mr-2"></i>Please fill all mandatory field !</p>
+                          </div>
+                        <div class="row">
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label"
+                                >EIN Number</label>&nbsp;<span class="small">(Business Tax ID)</span>
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="clinicEin"
+                                  [(ngModel)]="subscriptionBean.clinicEin"
+                                  name="clinicEin"
+                                  class="form-input"
+                                  (input)="einNumberFormat('clinicEin')"
+                                   placeholder="XXXXXXXXX"
+                                   minlength="9"
+                                   maxlength="9"
+                                />
+                                <div *ngIf="signupError?.clinicEin">
+                                  <span class="text-danger">{{
+                                    signupError.clinicEin
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label"
+                                >Clinic Name</label
+                              >
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="clinicName"
+                                  [(ngModel)]="subscriptionBean.clinicName"
+                                  name="clinicName"
+                                  class="form-input"
+                                  placeholder="Clinic Name"
+                                />
+                                <div *ngIf="signupError?.clinicName">
+                                  <span class="text-danger">{{
+                                    signupError.clinicName
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label">
+                                First Name</label>
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="firstName"
+                                  [(ngModel)]="subscriptionBean.firstName"
+                                  name="firstName"
+                                  placeholder="First Name"
+                                  class="form-input"
+                                />
+                                <div *ngIf="signupError?.firstName">
+                                  <span class="text-danger">{{
+                                    signupError.firstName
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-labels">
+                                Last Name</label>
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="lastName"
+                                  [(ngModel)]="subscriptionBean.lastName"
+                                  name="lastName"
+                                  placeholder="Last Name"
+                                  class="form-input"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div
+                              class="form-input-group otp-verification-input"
+                            >
+                              <label for="" class="form-label">
+                                Phone Number</label
+                              >
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  maxlength="10"
+                                  minlength="10"
+                                  (input)="mobileNumberFormat('userMobile')"
+                                  id="userMobile"
+                                  [(ngModel)]="subscriptionBean.userMobile"
+                                  name="userMobile"
+                                  placeholder="XXXXXXXXXX"
+                                  class="form-input"
+                                />
+                                <div *ngIf="signupError?.userMobile">
+                                  <span class="text-danger">{{
+                                    signupError.userMobile
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label"> User Email</label>
+                              <div class="form-input-box">
+                                <input
+                                  type="email"
+                                  id="userEmail"
+                                  [(ngModel)]="subscriptionBean.userEmail"
+                                  name="userEmail"
+                                  class="form-input"
+                                  placeholder="Your Company Email"/>
+                                <div *ngIf="signupError?.userEmail">
+                                  <span class="text-danger">{{signupError.userEmail}}</span>
+                                  <br>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label"> password</label>
+                              <div class="form-input-box">
+                                <input
+                                  [type]="changetype ? 'password' : 'text'"
+                                  id="userPassword"
+                                  [(ngModel)]="subscriptionBean.userPassword"
+                                  name="userPassword"
+                                  placeholder="Password"
+                                  class="form-input"
+                                />
+                                <div class="eye-icon" (click)="viewpass()">
+                                  <i
+                                    [ngClass]="
+                                      visible ? 'fa fa-eye-slash' : 'fa fa-eye'"
+                                  ></i>
+                                </div>
+
+                                <div *ngIf="signupError?.userPassword">
+                                  <span class="text-danger">{{
+                                    signupError.userPassword
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label">
+                                Confirm Password</label
+                              >
+                              <div class="form-input-box">
+                                <input
+                                  [type]="changetypes ? 'password' : 'text'"
+                                  placeholder="Confirm Password"
+                                  class="form-input"
+                                  id="confirm-userPassword"
+                                />
+                                <div class="eye-icon" (click)="viewspass()">
+                                  <i
+                                    [ngClass]="
+                                      visibles ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                    "
+                                  ></i>
+                                </div>
+                                <div *ngIf="isPasswordConfirm == true">
+                                  <span class="text-danger"
+                                    >Password Mismatch !</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                            <div class="form-input-group">
+                              <label for="" class="form-label">
+                                Billing Address</label
+                              >
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="address"
+                                  [(ngModel)]="subscriptionBean.address"
+                                  name="address"
+                                  placeholder="Billing Address"
+                                  class="form-input"
+                                />
+                                <div *ngIf="signupError?.address">
+                                  <span class="text-danger">{{
+                                    signupError.address
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <div class="form-input-box">
+                                  <input
+                                    type="text"
+                                    id="cityName"
+                                    [(ngModel)]="subscriptionBean.cityName"
+                                    name="cityName"
+                                    placeholder="City Name"
+                                    class="form-input"
+                                  />
+                                <div *ngIf="signupError?.cityName">
+                                  <span class="text-danger">{{
+                                    signupError.cityName
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                       </div>
+
+                          <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <select
+                                  name=""
+                                  id="c-stateId"
+                                  [(ngModel)]="subscriptionBean.stateId"
+                                  name="stateId"
+                                  class="form-input"
+            
+                                >
+                                  <option value="0">Select State</option>
+                                  <option
+                                    *ngFor="let stateObj of stateList"
+                                    value="{{ stateObj.id }}"
+                                  >
+                                    {{ stateObj.stateName }}
+                                  </option>
+                                </select>
+                                <div *ngIf="signupError?.stateId">
+                                  <span class="text-danger">{{
+                                    signupError.stateId
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <select
+                                  name=""
+                                  id="c-cityId"
+                                  [(ngModel)]="subscriptionBean.cityId"
+                                  name="cityId"
+                                  class="form-input"
+                                >
+                                  <option value="0">Select City</option>
+                                  <option
+                                    *ngFor="let cityObj of cityList"
+                                    value="{{ cityObj.id }}"
+                                  >
+                                    {{ cityObj.cityName }}
+                                  </option>
+                                </select>
+                                <div *ngIf="signupError?.cityId">
+                                  <span class="text-danger">{{
+                                    signupError.cityId
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+
+                          <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                            <div class="form-input-group">
+                              <div class="form-input-box">
+                                <input
+                                  type="text"
+                                  id="zipCode"
+                                  [(ngModel)]="subscriptionBean.zipCode"
+                                  name="zipCode"
+                                  placeholder="ZIP Code"
+                                  class="form-input"
+                                  (input)="zipCodeNumberFormat('zipCode')"
+                                  minlength="5"
+                                  maxlength="5" />
+                                <div *ngIf="signupError?.zipCode">
+                                  <span class="text-danger">{{
+                                    signupError.zipCode
+                                  }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12">
+                            <div class="plan-container row">
+                              <div
+                                class="col-md-12 col-lg-12"
+                                *ngFor="let planList of subscriptionPlanList let i=index">
+                              <label for="plan_{{planList.id}}" class="plan-selection-box">
+                                <div class="plan-selection-left">
+                                  <div class="plan-selection-checkbox">
+                                    <div class="plan-selected-checkbox">
+                                      <i class="fas fa-check-circle"></i>
+                                    </div>
+                                  </div>
+                                  <div class="plan-license">
+                                      <span *ngIf="i==0">Up to {{ planList.noOfLicense }} License</span >
+                                      <span *ngIf="i>0">Up to {{ planList.noOfLicense }} Licenses</span >
+                                    <div class="plan-selection-feature">
+                                      <a
+                                        >Plan Feature ({{
+                                          planList.subscriptionPlanName
+                                        }})
+                                        <i class="fas fa-angle-down"></i>
+                                      </a>
+                                    </div>
+                                    <p>
+                                      {{
+                                        planList.subscriptionAmount / 12
+                                          | currency
+                                            : "USD"
+                                            : "symbol"
+                                            : "1.1-2"
+                                      }}/License/ Month after 2 week free trial
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="plan-selection-right">
+                                  <input
+                                    type="radio"
+                                    id="plan_{{planList.id}}"
+                                    name="fav"
+                                    value="plan_a"
+                                    (click)="setPlan(planList.id)"
+                                  />
+                                  <h4>$ {{ planList.subscriptionAmount }}</h4>
+                                  <p>
+                                    Per Year <br />
+                                    Per License
+                                  </p>
+                                </div>
+                              </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="term-condition-accept">
+                              <input type="checkbox" name="c-termCheck" id="c-termCheck">
+                              <span>I Accept <a routerLink="/term" target="_blank" >Terms & Conditions</a> and <a routerLink="/policy" target="_blank" >Privacy Policy.</a></span>
+                            </div>
+                            <div class="term-condition-accept" >
+                              <input type="checkbox" name="c-news-letter" id="c-news-letter">
+                              <span >I consent to receiving future emails regarding platform updates, promotions, and offers.</span>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-submit-btn mt-4">
+                              <a ><button
+                                  id="switchFormsBtn"
+                                  class="form-btn"
+                                  type="submit"
+                                  (click)="onSubmit()" >
+                                  Save & Next
+                                </button></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="tab-pane  fade show active"
+                    id="pills-newclinic"
+                    role="tabpanel"
+                    aria-labelledby="pills-newclicnic-tab">
+                    <div class="form-group-container" id="form3">
+                      <div class="alert-error" id="therapist_mandat">
+                        <p><i class="fas fa-exclamation-circle mr-2"></i>Please fill all mandatory field !</p>
+                        </div>
+                      <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label">
+                              License Key</label > <span class="small">(once your clinic admin registers, they will receive license keys for you to use)</span>
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="licenseKey"
+                                [(ngModel)]="therapistBean.licenseKey"
+                                name="licenseKey"
+                                placeholder="License Key"
+                                (blur)="findLicenseKey('licenseKey')"
+                                class="form-input"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label"> First Name</label>
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="firstName"
+                                [(ngModel)]="therapistBean.firstName"
+                                name="firstName"
+                                placeholder="First Name"
+                                class="form-input"
+                              />
+                              <div *ngIf="therapistError?.firstName">
+                                <span class="text-danger">{{
+                                  therapistError.firstName
+                                }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-labels"> Last Name</label>
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="lastName"
+                                [(ngModel)]="therapistBean.lastName"
+                                name="lastName"
+                                placeholder="Last Name"
+                                class="form-input"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label">
+                              Phone Number</label
+                            >
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="mobile"
+                                (input)="mobileNumberFormat('mobile')"
+                                [(ngModel)]="therapistBean.mobile"
+                                name="mobile"
+                                placeholder="XXXXXXXXXX"
+                                class="form-input"
+                                maxlength="10"
+                                minlength="10"
+                              />
+                              <div *ngIf="therapistError?.mobile">
+                                <span class="text-danger">{{
+                                  therapistError.mobile
+                                }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label"> User Email</label> <span class="small">(can’t be same email as clinic admin)</span>
+                            <div class="form-input-box">
+                              <input
+                                type="email"
+                                id="email"
+                                [(ngModel)]="therapistBean.email"
+                                name="email"
+                                placeholder="User Email"
+                                class="form-input"
+                              />
+                              <div *ngIf="therapistError?.email">
+                                <span class="text-danger">{{
+                                  therapistError.email
+                                }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label"> password</label>
+                            <div class="form-input-box">
+                              <input
+                                [type]="changetype ? 'password' : 'text'"
+                                id="password"
+                                [(ngModel)]="therapistBean.password"
+                                name="password"
+                                placeholder="Password"
+                                class="form-input"
+                              />
+                              <div class="eye-icon" (click)="viewpass()">
+                                <i
+                                  [ngClass]="
+                                    visible ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                  "
+                                ></i>
+                              </div>
+                              <div *ngIf="therapistError?.password">
+                                <span class="text-danger">{{
+                                  therapistError.password
+                                }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label">
+                              Confirm Password</label
+                            >
+                            <div class="form-input-box">
+                              <input
+                                [type]="changetypes ? 'password' : 'text'"
+                                placeholder="Confirm Password"
+                                class="form-input"
+                                id="confirmpassword"
+                              />
+                              <div class="eye-icon" (click)="viewspass()">
+                                <i
+                                  [ngClass]="
+                                    visibles ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                  "
+                                ></i>
+                              </div>
+                              <div *ngIf="isPasswordConfirm1 == true">
+                                <span class="text-danger"
+                                  >Password Mismatch !</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                          <div class="form-input-group">
+                            <label for="" class="form-label">
+                              Clinic Address</label>
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="t-address"
+                                placeholder=" Clinic Address"
+                                class="form-input"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                placeholder="City"
+                                id="t-city"
+                                class="form-input"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="t-state"
+                                placeholder="State"
+                                class="form-input"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+                          <div class="form-input-group">
+                            <div class="form-input-box">
+                              <input
+                                type="text"
+                                id="t-zipcode"
+                                placeholder="ZIP Code"
+                                class="form-input"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="term-condition-accept">
+                            <input type="checkbox" name="t-termCheck" id="t-termCheck">
+                            <span>I Accept <a routerLink="/term" target="_blank" >Terms & Conditions</a> and <a routerLink="/policy" target="_blank">Privacy Policy.</a></span>
+                          </div>
+                        </div>
+                       
+                        <div class="col-12">
+                          <div class="form-submit-btn  mt-4">
+                            <a
+                              ><button
+                                type="button"
+                                class="form-btn"
+                                id="switchFormsBtn_2"
+                                (click)="therapistSubmit()"
+                              >
+                                Save & Next
+                              </button></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,315 @@
+<div class="container-fluid-p-0">
+  <div class="page-container">
+    <div class="container">
+      <div class="login-wrapper">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12 col-lg-7 col-xl-7 col-12">
+            <div class="login-form">
+              <div class="form-group-container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="login-heading">
+                      <h1>Support</h1>
+                      <!-- <p>
+                        Clarifying any room for confusion in the measurement
+                        entry form exporting, or the data visualization
+                      </p> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label"> Full Name</label>
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          id="name"
+                          [(ngModel)]="adminSupport.name"
+                          name="name"
+                          placeholder="Full Name"
+                          class="form-input"
+                        />
+                        <div *ngIf="adminSupportError?.name">
+                          <span class="text-danger"
+                            >{{ adminSupportError.name }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-6 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label"> Email</label>
+                      <div class="form-input-box">
+                        <input
+                          type="email"
+                          id="email"
+                          [(ngModel)]="adminSupport.email"
+                          name="email"
+                          placeholder="Email"
+                          class="form-input"
+                        />
+                        <div *ngIf="adminSupportError?.email">
+                          <span class="text-danger"
+                            >{{ adminSupportError.email }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label">Subject</label>
+                      <div class="form-input-box">
+                        <input
+                          type="text"
+                          id="subject"
+                          [(ngModel)]="adminSupport.subject"
+                          name="subject"
+                          placeholder="Subject"
+                          class="form-input"
+                        />
+                        <div *ngIf="adminSupportError?.subject">
+                          <span class="text-danger"
+                            >{{ adminSupportError.subject }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-lg-12 col-xl-12 col-12">
+                    <div class="form-input-group">
+                      <label for="" class="form-label">Message:</label>
+                      <div class="">
+                        <textarea
+                          id="message"
+                          [(ngModel)]="adminSupport.message"
+                          name="message"
+                          cols="30"
+                          class="form-textarea"
+                          placeholder="Insert your question or comment here"
+                          rows="4"
+                        ></textarea>
+                        <div *ngIf="adminSupportError?.message">
+                          <span class="text-danger"
+                            >{{ adminSupportError.message }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-submit-btn">
+                      <a
+                        ><button
+                          class="form-btn"
+                          type="button"
+                          (click)="onSubmit()"
+                        >
+                          Submit
+                        </button></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq_wrapper">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-7">
+              <div class="faq_card">
+                <div class="container">
+                  <h5 class="mb-3">FAQ</h5>
+                  <div id="accordion">
+                    <!-- <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseOne"
+                        >
+                          Is EdemaTrack HIPAA compliant?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseOne"
+                        class="collapse show"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Yes, we will save and protect your patient data.
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseTwo"
+                        >
+                          Will EdemaTrack save my personal info?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseTwo"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Yes, it is securely saved on our HIPAA compliant
+                          servers.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseThree"
+                        >
+                          What if I don’t know how many licenses to get?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseThree"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Get the licenses you need; you can always upgrade and
+                          will only have to pay the difference between your new
+                          and existing plans.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseFour"
+                        >
+                          Can therapists share licenses?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseFour"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          No, licenses are specific to clinician. Sharing would
+                          violate terms & conditions as well as increase the
+                          risk of data inconsistencies.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseFive"
+                        >
+                          Why is there a clinic admin login as well as therapist
+                          login?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseFive"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          The clinic admin is part of our security protocols,
+                          clinic admin controls the licenses as well as views
+                          metrics not visible to clinicians.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseSix"
+                        >
+                          What makes EdemaTrack so great?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseSix"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          This is a program created for therapists and
+                          clinicians working in the field. We wanted to create a
+                          powerful yet intuitive program to enable users to
+                          better track treatment outcomes and educate/share this
+                          information with patients and healthcare providers.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapseSeven"
+                        >
+                          Will EdemaTrack continue to evolve as a platform?
+                        </a>
+                      </div>
+                      <div
+                        id="collapseSeven"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          Yes, we are always working with clinicians and
+                          administrators to ensure the program’s continued
+                          relevance. We will continue to improve the program as
+                          new updates are considered.
+                        </div>
+                      </div>
+                    </div> -->
+                    <div class="card"  *ngFor="let faq of faqList; let i = index">
+                      <div class="card-header">
+                        <a
+                          class="collapsed card-link accordion-title"
+                          data-toggle="collapse"
+                          href="#collapse{{i}}"
+                        >
+                        {{ faq.question }}
+                        </a>
+                      </div>
+                      <div
+                        id="collapse{{i}}"
+                        class="collapse"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          {{ faq.answer }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
